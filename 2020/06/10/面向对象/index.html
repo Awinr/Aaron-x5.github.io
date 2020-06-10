@@ -8,15 +8,15 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>面向对象 | 个人技术博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="如何理解面向对象面向对象：（更好的模拟现实世界） 任何事物都可以通过两个方面来确定它：1、静态的一些属性2、动态的可以执行的一些操作 在 c 语言中，数据和对数据的操作是分开的，联系性不大（不能很好的描述出一个事物） 在 java 中，数据（成员变量）和操作（成员方法）被封装在一起，是一个有机的整体。成员方法只能通过本对象来调用，不能被其他事物所调用，所以，安全性极大提高  类与对象个人理解就是：">
+  <meta name="description" content="如何理解面向对象">
 <meta property="og:type" content="article">
 <meta property="og:title" content="面向对象">
 <meta property="og:url" content="http://yoursite.com/2020/06/10/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/index.html">
 <meta property="og:site_name" content="个人技术博客">
-<meta property="og:description" content="如何理解面向对象面向对象：（更好的模拟现实世界） 任何事物都可以通过两个方面来确定它：1、静态的一些属性2、动态的可以执行的一些操作 在 c 语言中，数据和对数据的操作是分开的，联系性不大（不能很好的描述出一个事物） 在 java 中，数据（成员变量）和操作（成员方法）被封装在一起，是一个有机的整体。成员方法只能通过本对象来调用，不能被其他事物所调用，所以，安全性极大提高  类与对象个人理解就是：">
+<meta property="og:description" content="如何理解面向对象">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-06-10T08:34:43.000Z">
-<meta property="article:modified_time" content="2020-06-10T14:16:07.460Z">
+<meta property="article:modified_time" content="2020-06-10T14:20:46.681Z">
 <meta property="article:author" content="Aaron">
 <meta property="article:tag" content="java">
 <meta name="twitter:card" content="summary">
@@ -177,7 +177,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="如何理解面向对象"><a href="#如何理解面向对象" class="headerlink" title="如何理解面向对象"></a>如何理解面向对象</h1><h2 id="面向对象：（更好的模拟现实世界）"><a href="#面向对象：（更好的模拟现实世界）" class="headerlink" title="面向对象：（更好的模拟现实世界）"></a>面向对象：（更好的模拟现实世界）</h2><ul>
+        <h1 id="如何理解面向对象"><a href="#如何理解面向对象" class="headerlink" title="如何理解面向对象"></a>如何理解面向对象</h1><a id="more"></a>
+<h2 id="面向对象：（更好的模拟现实世界）"><a href="#面向对象：（更好的模拟现实世界）" class="headerlink" title="面向对象：（更好的模拟现实世界）"></a>面向对象：（更好的模拟现实世界）</h2><ul>
 <li>任何事物都可以通过两个方面来确定它：<br>1、静态的一些属性<br>2、动态的可以执行的一些操作</li>
 <li>在 c 语言中，数据和对数据的操作是分开的，联系性不大（不能很好的描述出一个事物）</li>
 <li>在 java 中，数据（成员变量）和操作（成员方法）被封装在一起，是一个有机的整体。成员方法只能通过本对象来调用，不能被其他事物所调用，所以，安全性极大提高</li>
@@ -212,12 +213,9 @@
 </li>
 </ul>
 <h4 id="多态的三个条件"><a href="#多态的三个条件" class="headerlink" title="多态的三个条件"></a>多态的三个条件</h4><ol>
-<li><p>继承的存在(继承是多态的基础,没有继承就没有多态).</p>
-</li>
-<li><p>子类重写父类的方法(多态下调用子类重写的方法).</p>
-</li>
-<li><p>父类引用变量指向子类对象(子类到父类的类型转换).</p>
-</li>
+<li>继承的存在(继承是多态的基础,没有继承就没有多态).<br>&emsp;</li>
+<li>子类重写父类的方法(多态下调用子类重写的方法).<br>&emsp;</li>
+<li>父类引用变量指向子类对象(子类到父类的类型转换).</li>
 </ol>
 <h4 id="子类转换成父类时的规则"><a href="#子类转换成父类时的规则" class="headerlink" title="子类转换成父类时的规则:"></a>子类转换成父类时的规则:</h4><ul>
 <li>将一个父类的引用指向一个子类的对象,称为向上转型(upcastiog),自动进行类型转换.<br>&emsp;</li>
