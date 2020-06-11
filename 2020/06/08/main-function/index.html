@@ -16,7 +16,7 @@
 <meta property="og:description" content="细说Java中的main方法">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-06-08T12:12:56.884Z">
-<meta property="article:modified_time" content="2020-06-10T08:52:38.865Z">
+<meta property="article:modified_time" content="2020-06-11T12:22:48.995Z">
 <meta property="article:author" content="Aaron">
 <meta property="article:tag" content="public">
 <meta property="article:tag" content="static">
@@ -181,7 +181,10 @@
       
         <h1 id="细说Java中的main方法"><a href="#细说Java中的main方法" class="headerlink" title="细说Java中的main方法"></a>细说Java中的main方法</h1><a id="more"></a>
 <h2 id="public"><a href="#public" class="headerlink" title="public:"></a>public:</h2><p>main是java程序的入口，java程序通过JVM调用，属于外部调用，所以需要使用public修饰，否则虚拟机无法调用。</p>
-<h2 id="static"><a href="#static" class="headerlink" title="static:"></a>static:</h2><p>在java中，没有static的变量或函数是属于对象的，必须用对象名来调用。有static的变量或函数则属于类，被所有对象所共有。类名对象名都可以调用(尽量不要用对象名来调用)。main函数作为程序的入口，需要在其它函数实例化之前就启动。将main方法声明为static的，这样main()中的代码是存储在静态存储区的，即当定义了类以后，这段代码就已经存在了。在类加载的时候，静态方法——main()方法就会随之加载到内存中去。如果main()方法没有使用static修饰符，那么编译不会出错，但是当你试图执行该程序时，编译器将会报错，提示main()方法不存在。因为包含main()的类并没有实例化（即没有这个类的对象），所以其main()方法也不会存在。而使用static修饰符则表示该方法是静态的，不需要实例化即可使用。</p>
+<h2 id="static"><a href="#static" class="headerlink" title="static:"></a>static:</h2><ul>
+<li>在java中，静态成员(变量和方法)属于类本身，在类加载的时候就会分配内存，类名对象名都可以调用(尽量不要用对象名来调用)。非静态成员（变量和方法）属于类的对象，所以只有在类的对象产生（创建类的实例）时才会分配内存，然后通过类的对象（实例）去访问。因此在一个类的静态成员中去访问其非静态成员之所以会出错是因为在类的非静态成员不存在的时候类的静态成员就已经存在了，访问一个内存中不存在的东西当然会出错。<br>&emsp;</li>
+<li>main函数作为程序的入口，需要在其它函数实例化之前就启动。将main方法声明为static的，这样main()中的代码是存储在静态存储区的，即当定义了类以后，这段代码就已经存在了。在类加载的时候，静态方法——main()方法就会随之加载到内存中去。如果main()方法没有使用static修饰符，那么编译不会出错，但是当你试图执行该程序时，编译器将会报错，提示main()方法不存在。因为包含main()的类并没有实例化（即没有这个类的对象），所以其main()方法也不会存在。而使用static修饰符则表示该方法是静态的，不需要实例化即可使用。</li>
+</ul>
 <h2 id="void"><a href="#void" class="headerlink" title="void:"></a>void:</h2><p>对于java中的main()，jvm有限制，不能有返回值，因此返回值类型为void。因为当main方法出现返回值时，JVM无法进行上抛，如果有返回值难道抛给操作系统么?（JVM外面就是操作系统）</p>
 <h2 id="String-args："><a href="#String-args：" class="headerlink" title="String[] args："></a>String[] args：</h2><p>参数String[] args是一个字符串数组，接收来自程序执行时传进来的参数。args是数组的名字(参数的意思)，并不是固定的，可以改成其他名字。</p>
 
@@ -419,14 +422,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">way</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">java</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">public</a>
               </li>
              
@@ -436,6 +431,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">void</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">java</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">way</a>
               </li>
             
             <div class="clearfix"></div>
