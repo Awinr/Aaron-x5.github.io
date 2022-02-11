@@ -6,19 +6,21 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>function call | 个人技术博客</title>
+  <title>main method | 个人技术博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="函数是如何被调用的">
+  <meta name="description" content="细说Java中的main方法">
 <meta property="og:type" content="article">
-<meta property="og:title" content="function call">
-<meta property="og:url" content="http://yoursite.com/2020/06/09/function-call/index.html">
+<meta property="og:title" content="main method">
+<meta property="og:url" content="http://yoursite.com/2020/06/08/main-method/index.html">
 <meta property="og:site_name" content="个人技术博客">
-<meta property="og:description" content="函数是如何被调用的">
+<meta property="og:description" content="细说Java中的main方法">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2020-06-09T02:29:47.653Z">
-<meta property="article:modified_time" content="2020-06-29T03:56:57.163Z">
+<meta property="article:published_time" content="2020-06-08T12:12:56.884Z">
+<meta property="article:modified_time" content="2020-06-27T08:44:19.843Z">
 <meta property="article:author" content="Aaron">
-<meta property="article:tag" content="java">
+<meta property="article:tag" content="public">
+<meta property="article:tag" content="static">
+<meta property="article:tag" content="void">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="个人技术博客" type="application/atom+xml">
@@ -157,39 +159,76 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-function-call" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-main-method" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      function call
+      main method
     </h1>
   
 
         
-        <a href="/2020/06/09/function-call/" class="archive-article-date">
-  	<time datetime="2020-06-09T02:29:47.653Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-09</time>
+        <a href="/2020/06/08/main-method/" class="archive-article-date">
+  	<time datetime="2020-06-08T12:12:56.884Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-08</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>函数是如何被调用的</p>
+        <p>细说Java中的main方法</p>
 <a id="more"></a>
-<h2 id="当在一个函数的运行期间调用另一个函数时，在运行被调函数之前，系统需要完成三件事："><a href="#当在一个函数的运行期间调用另一个函数时，在运行被调函数之前，系统需要完成三件事：" class="headerlink" title="当在一个函数的运行期间调用另一个函数时，在运行被调函数之前，系统需要完成三件事："></a>当在一个函数的运行期间调用另一个函数时，在运行被调函数之前，系统需要完成三件事：</h2><ul>
-<li>将所有的实际参数，返回地址等信息传递给被调函数保存</li>
-<li>为被调函数的局部变量（包括形参）分配存储空间</li>
-<li>将控制住转移到被调函数的入口</li>
+<h2 id="public"><a href="#public" class="headerlink" title="public:"></a>public:</h2><p>main方法是java程序的入口，java程序通过JVM调用，属于外部调用，所以需要使用public修饰，否则虚拟机无法调用。</p>
+<h4 id="四种访问修饰符"><a href="#四种访问修饰符" class="headerlink" title="四种访问修饰符"></a>四种访问修饰符</h4><table>
+<thead>
+<tr>
+<th align="left">访问修饰符</th>
+<th align="center">public</th>
+<th align="center">protected</th>
+<th align="center">default</th>
+<th align="right">private</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">同一个类</td>
+<td align="center">Yes</td>
+<td align="center">Yes</td>
+<td align="center">Yes</td>
+<td align="right">Yes</td>
+</tr>
+<tr>
+<td align="left">同一个包</td>
+<td align="center">Yes</td>
+<td align="center">Yes</td>
+<td align="center">Yes</td>
+<td align="right">No</td>
+</tr>
+<tr>
+<td align="left">不同包子类</td>
+<td align="center">Yes</td>
+<td align="center">Yes</td>
+<td align="center">No</td>
+<td align="right">No</td>
+</tr>
+<tr>
+<td align="left">不同包非子类</td>
+<td align="center">Yes</td>
+<td align="center">No</td>
+<td align="center">No</td>
+<td align="right">No</td>
+</tr>
+</tbody></table>
+<h2 id="static"><a href="#static" class="headerlink" title="static:"></a>static:</h2><ul>
+<li>在内存中，先有静态，后有非静态。<br>&emsp;</li>
+<li>静态成员(变量和方法)属于类本身，在类加载的时候就会分配内存，类名对象名都可以调用(前提是非私有，尽量不要用对象名来调用，容易让人误解)。非静态成员（变量和方法）属于类的对象，所以只有在类的对象产生（创建类的实例）时才会分配内存，然后通过类的对象（实例）去访问。因此在一个类的静态成员中直接去访问其非静态成员之所以会出错是因为在类的非静态成员不存在的时候类的静态成员就已经存在了，访问一个内存中不存在的东西当然会出错。<br>&emsp;</li>
+<li>对于本类中的静态方法，可以省略类名称，直接调用<br>&emsp;</li>
+<li>main函数作为程序的入口，需要在其它函数实例化之前就启动。将main方法声明为static的，这样main()中的代码是存储在静态存储区的，即当定义了类以后，这段代码就已经存在了。在类被JVM加载的时候，静态方法——main()方法就会随之加载到内存中去。如果main()方法没有使用static修饰符，那么编译不会出错，但是当你试图执行该程序时，编译器将会报错，提示main()方法不存在。因为包含main()的类并没有实例化（即没有这个类的对象），所以其main()方法也不会存在。而使用static修饰符则表示该方法是静态的，不需要实例化即可使用。</li>
 </ul>
-<h2 id="从被调函数返回主调函数之前，系统也要完成三件事："><a href="#从被调函数返回主调函数之前，系统也要完成三件事：" class="headerlink" title="从被调函数返回主调函数之前，系统也要完成三件事："></a>从被调函数返回主调函数之前，系统也要完成三件事：</h2><ul>
-<li>保存被调函数的返回结果</li>
-<li>释放被调函数所占的空间</li>
-<li>依照被调函数保存的返回地址将控制转移到调用函数</li>
-</ul>
-<h2 id="多函数调用："><a href="#多函数调用：" class="headerlink" title="多函数调用："></a>多函数调用：</h2><p>当有多个函数相互调用时，按照“后调用先返回”的原则，上述函数之间信息传递和控制转移必须借助”栈”来实现，即系统将整个程序运行时所需的数据空间安排在一个栈中，每当调用一个函数时，就在栈顶分配一个存储区，进行压栈操作，每当一个函数退出时，就释放它的存储区，就行出栈操作，当前运行的函数永远都在栈顶位置</p>
+<h2 id="void"><a href="#void" class="headerlink" title="void:"></a>void:</h2><p>对于java中的main()，jvm有限制，不能有返回值，因此返回值类型为void。因为当main方法出现返回值时，JVM无法进行上抛，如果有返回值难道抛给操作系统么?（JVM外面就是操作系统）</p>
+<h2 id="String-args："><a href="#String-args：" class="headerlink" title="String[ ] args："></a>String[ ] args：</h2><p>参数String[ ] args是一个字符串数组，接收来自程序执行时传进来的参数。args是数组的名字(参数的意思)，并不是固定的，可以改成其他名字。</p>
 
       
 
@@ -198,13 +237,32 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">public</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">static</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">void</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/function//" class="article-tag-list-link color4">function</a>
+        			<a href="/categories/method//" class="article-tag-list-link color2">method</a>
         		</li>
       		
 		</ul>
@@ -259,7 +317,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/06/09/function-call/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/06/08/main-method/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -273,18 +331,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2020/06/10/object-oriented/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2020/06/09/function-call/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          面向对象
+          function call
         
       </div>
     </a>
   
   
-    <a href="/2020/06/08/main-method/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">main method</div>
+    <a href="/2020/06/08/Java-way/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Java</div>
       <i class="icon-circle-right"></i>
     </a>
   

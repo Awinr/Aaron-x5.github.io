@@ -6,19 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>function call | 个人技术博客</title>
+  <title>keyword | 个人技术博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="函数是如何被调用的">
+  <meta name="description" content="Java部分关键字">
 <meta property="og:type" content="article">
-<meta property="og:title" content="function call">
-<meta property="og:url" content="http://yoursite.com/2020/06/09/function-call/index.html">
+<meta property="og:title" content="keyword">
+<meta property="og:url" content="http://yoursite.com/2020/06/19/keyword/index.html">
 <meta property="og:site_name" content="个人技术博客">
-<meta property="og:description" content="函数是如何被调用的">
+<meta property="og:description" content="Java部分关键字">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2020-06-09T02:29:47.653Z">
-<meta property="article:modified_time" content="2020-06-29T03:56:57.163Z">
+<meta property="article:published_time" content="2020-06-19T12:16:37.650Z">
+<meta property="article:modified_time" content="2020-06-27T08:07:30.575Z">
 <meta property="article:author" content="Aaron">
-<meta property="article:tag" content="java">
+<meta property="article:tag" content="keyword">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="个人技术博客" type="application/atom+xml">
@@ -157,39 +157,44 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-function-call" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-keyword" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      function call
+      keyword
     </h1>
   
 
         
-        <a href="/2020/06/09/function-call/" class="archive-article-date">
-  	<time datetime="2020-06-09T02:29:47.653Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-09</time>
+        <a href="/2020/06/19/keyword/" class="archive-article-date">
+  	<time datetime="2020-06-19T12:16:37.650Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-19</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>函数是如何被调用的</p>
+        <p>Java部分关键字</p>
 <a id="more"></a>
-<h2 id="当在一个函数的运行期间调用另一个函数时，在运行被调函数之前，系统需要完成三件事："><a href="#当在一个函数的运行期间调用另一个函数时，在运行被调函数之前，系统需要完成三件事：" class="headerlink" title="当在一个函数的运行期间调用另一个函数时，在运行被调函数之前，系统需要完成三件事："></a>当在一个函数的运行期间调用另一个函数时，在运行被调函数之前，系统需要完成三件事：</h2><ul>
-<li>将所有的实际参数，返回地址等信息传递给被调函数保存</li>
-<li>为被调函数的局部变量（包括形参）分配存储空间</li>
-<li>将控制住转移到被调函数的入口</li>
+<h2 id="fianl"><a href="#fianl" class="headerlink" title="fianl"></a>fianl</h2><ul>
+<li>修饰类则该类不能被继承<br>&emsp;</li>
+<li>修饰方法则该方法可以被继承，但不能被重写<br>&emsp;</li>
+<li>修饰局部变量则该变量是一个常量<br>&emsp;</li>
+<li>修饰成员属性则表示该属性能且只能被赋一次值，赋值方式有两种，并且只能用其中的一种。<br>　　1、定义的同时显示地初始化<br>　　2、构造函数中初始化</li>
 </ul>
-<h2 id="从被调函数返回主调函数之前，系统也要完成三件事："><a href="#从被调函数返回主调函数之前，系统也要完成三件事：" class="headerlink" title="从被调函数返回主调函数之前，系统也要完成三件事："></a>从被调函数返回主调函数之前，系统也要完成三件事：</h2><ul>
-<li>保存被调函数的返回结果</li>
-<li>释放被调函数所占的空间</li>
-<li>依照被调函数保存的返回地址将控制转移到调用函数</li>
+<h2 id="abstract"><a href="#abstract" class="headerlink" title="abstract"></a>abstract</h2><ul>
+<li>一个抽象类不一定有抽象方法，但含有抽象方法的一定是抽象类<br>&emsp;</li>
+<li>只重写了抽象类部分抽象方法的类也必须被标记为abstract<br>&emsp;</li>
+<li>抽象类不能实例化对象，抽象类最重要的一点就是为了实现多态</li>
 </ul>
-<h2 id="多函数调用："><a href="#多函数调用：" class="headerlink" title="多函数调用："></a>多函数调用：</h2><p>当有多个函数相互调用时，按照“后调用先返回”的原则，上述函数之间信息传递和控制转移必须借助”栈”来实现，即系统将整个程序运行时所需的数据空间安排在一个栈中，每当调用一个函数时，就在栈顶分配一个存储区，进行压栈操作，每当一个函数退出时，就释放它的存储区，就行出栈操作，当前运行的函数永远都在栈顶位置</p>
+<h2 id="static修饰代码块"><a href="#static修饰代码块" class="headerlink" title="static修饰代码块"></a>static修饰代码块</h2><ul>
+<li>当第一次用到本类时，静态代码块执行唯一的一次<br>&emsp;</li>
+<li>静态内容总是优先于非静态，静态代码块比构造方法先执行。<br>&emsp;</li>
+<li>静态代码块的典型用途：用来一次性的对静态成员变量进行赋值</li>
+</ul>
 
       
 
@@ -198,18 +203,18 @@
     <div class="article-info article-info-index">
       
       
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/function//" class="article-tag-list-link color4">function</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">keyword</a>
         		</li>
       		
 		</ul>
 	</div>
 
+      
 
       
 
@@ -259,7 +264,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/06/09/function-call/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/06/19/keyword/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -273,18 +278,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2020/06/10/object-oriented/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2020/06/26/Interface/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          面向对象
+          Interface
         
       </div>
     </a>
   
   
-    <a href="/2020/06/08/main-method/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">main method</div>
+    <a href="/2020/06/10/object-oriented/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">面向对象</div>
       <i class="icon-circle-right"></i>
     </a>
   

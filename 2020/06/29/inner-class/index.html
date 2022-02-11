@@ -6,17 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>function call | 个人技术博客</title>
+  <title>内部类 | 个人技术博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="函数是如何被调用的">
+  <meta name="description" content="内部类的使用">
 <meta property="og:type" content="article">
-<meta property="og:title" content="function call">
-<meta property="og:url" content="http://yoursite.com/2020/06/09/function-call/index.html">
+<meta property="og:title" content="内部类">
+<meta property="og:url" content="http://yoursite.com/2020/06/29/inner-class/index.html">
 <meta property="og:site_name" content="个人技术博客">
-<meta property="og:description" content="函数是如何被调用的">
+<meta property="og:description" content="内部类的使用">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2020-06-09T02:29:47.653Z">
-<meta property="article:modified_time" content="2020-06-29T03:56:57.163Z">
+<meta property="article:published_time" content="2020-06-29T03:56:41.423Z">
+<meta property="article:modified_time" content="2020-06-29T04:18:22.452Z">
 <meta property="article:author" content="Aaron">
 <meta property="article:tag" content="java">
 <meta name="twitter:card" content="summary">
@@ -157,39 +157,29 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-function-call" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-inner-class" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      function call
+      内部类
     </h1>
   
 
         
-        <a href="/2020/06/09/function-call/" class="archive-article-date">
-  	<time datetime="2020-06-09T02:29:47.653Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-09</time>
+        <a href="/2020/06/29/inner-class/" class="archive-article-date">
+  	<time datetime="2020-06-29T03:56:41.423Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-29</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>函数是如何被调用的</p>
+        <p>内部类的使用</p>
 <a id="more"></a>
-<h2 id="当在一个函数的运行期间调用另一个函数时，在运行被调函数之前，系统需要完成三件事："><a href="#当在一个函数的运行期间调用另一个函数时，在运行被调函数之前，系统需要完成三件事：" class="headerlink" title="当在一个函数的运行期间调用另一个函数时，在运行被调函数之前，系统需要完成三件事："></a>当在一个函数的运行期间调用另一个函数时，在运行被调函数之前，系统需要完成三件事：</h2><ul>
-<li>将所有的实际参数，返回地址等信息传递给被调函数保存</li>
-<li>为被调函数的局部变量（包括形参）分配存储空间</li>
-<li>将控制住转移到被调函数的入口</li>
-</ul>
-<h2 id="从被调函数返回主调函数之前，系统也要完成三件事："><a href="#从被调函数返回主调函数之前，系统也要完成三件事：" class="headerlink" title="从被调函数返回主调函数之前，系统也要完成三件事："></a>从被调函数返回主调函数之前，系统也要完成三件事：</h2><ul>
-<li>保存被调函数的返回结果</li>
-<li>释放被调函数所占的空间</li>
-<li>依照被调函数保存的返回地址将控制转移到调用函数</li>
-</ul>
-<h2 id="多函数调用："><a href="#多函数调用：" class="headerlink" title="多函数调用："></a>多函数调用：</h2><p>当有多个函数相互调用时，按照“后调用先返回”的原则，上述函数之间信息传递和控制转移必须借助”栈”来实现，即系统将整个程序运行时所需的数据空间安排在一个栈中，每当调用一个函数时，就在栈顶分配一个存储区，进行压栈操作，每当一个函数退出时，就释放它的存储区，就行出栈操作，当前运行的函数永远都在栈顶位置</p>
+<h2 id="匿名内部类"><a href="#匿名内部类" class="headerlink" title="匿名内部类"></a>匿名内部类</h2><h4 id="作用"><a href="#作用" class="headerlink" title="作用"></a>作用</h4><p>如果接口的实现类（或者定义类的子类）只需要使用唯一的一次，这种情况下就可以省略该类的定义，改用【 匿名内部类 】。</p>
 
       
 
@@ -199,17 +189,6 @@
       
       
       
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/function//" class="article-tag-list-link color4">function</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
 
       
 
@@ -259,7 +238,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/06/09/function-call/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/06/29/inner-class/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -273,18 +252,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2020/06/10/object-oriented/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          面向对象
-        
-      </div>
-    </a>
   
-  
-    <a href="/2020/06/08/main-method/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">main method</div>
+    <a href="/2020/06/26/Interface/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Interface</div>
       <i class="icon-circle-right"></i>
     </a>
   

@@ -8,15 +8,15 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>面向对象 | 个人技术博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="如何理解面向对象">
+  <meta name="description" content="面向对象的一些基本概念">
 <meta property="og:type" content="article">
 <meta property="og:title" content="面向对象">
-<meta property="og:url" content="http://yoursite.com/2020/06/10/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/index.html">
+<meta property="og:url" content="http://yoursite.com/2020/06/10/object-oriented/index.html">
 <meta property="og:site_name" content="个人技术博客">
-<meta property="og:description" content="如何理解面向对象">
+<meta property="og:description" content="面向对象的一些基本概念">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-06-10T08:34:43.000Z">
-<meta property="article:modified_time" content="2020-06-14T11:43:22.439Z">
+<meta property="article:modified_time" content="2020-06-27T05:12:54.307Z">
 <meta property="article:author" content="Aaron">
 <meta property="article:tag" content="java">
 <meta name="twitter:card" content="summary">
@@ -157,7 +157,7 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-面向对象" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-object-oriented" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
@@ -169,7 +169,7 @@
   
 
         
-        <a href="/2020/06/10/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/" class="archive-article-date">
+        <a href="/2020/06/10/object-oriented/" class="archive-article-date">
   	<time datetime="2020-06-10T08:34:43.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-10</time>
 </a>
         
@@ -177,22 +177,26 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="如何理解面向对象"><a href="#如何理解面向对象" class="headerlink" title="如何理解面向对象"></a>如何理解面向对象</h1><a id="more"></a>
+        <p>面向对象的一些基本概念</p>
+<a id="more"></a>
 <h2 id="面向对象：（更好的模拟现实世界）"><a href="#面向对象：（更好的模拟现实世界）" class="headerlink" title="面向对象：（更好的模拟现实世界）"></a>面向对象：（更好的模拟现实世界）</h2><ul>
 <li>任何事物都可以通过两个方面来确定它：<br>1、静态的一些属性<br>2、动态的可以执行的一些操作</li>
 <li>在 c 语言中，数据和对数据的操作是分开的，联系性不大（不能很好的描述出一个事物）</li>
 <li>在 java 中，数据（成员变量）和操作（成员方法）被封装在一起，是一个有机的整体。成员方法只能通过本对象来调用，不能被其他事物所调用，所以，安全性极大提高</li>
 </ul>
 <h2 id="类与对象"><a href="#类与对象" class="headerlink" title="类与对象"></a>类与对象</h2><p>个人理解就是：类就是把某个事物所具有的静态属性和动态行为封装在一起，从而形成了一个模型，我们通过这个模型可以实例化出一个具体的对象。即类是对象的抽象，对象是类的具体。</p>
-<h2 id="封装"><a href="#封装" class="headerlink" title="封装"></a>封装</h2><p>封装把一个对象的属性私有化，同时提供一些可以被外界访问的属性的方法，如果不想被外界方法，我们大可不必提供方法给外界访问。但是如果一个类没有提供给外界访问的方法，那么这个类也没有什么意义了。<br>&emsp;</p>
-<h2 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h2><p>继承所描述的是“is-a”的关系，如果有两个对象A和B，若可以描述为“A是B”，则可以表示A继承B，其中B是被继承者称之为父类或者基类，A是继承者称之为子类或者派生类。基类的私有成员物理上已经被继承过来，只不过逻辑上程序员不能去访问它。继承反映现实世界的一般到特殊关系。</p>
-<p>java只支持单继承，但可以多级继承。在java中,所有的java类都直接或间的接的继承了java.lang.long.Object类.Object类是所有java类的祖先.在定义一个类时,没有使用 extends 关键字,那么这个类直接继承Object类。</p>
+<h2 id="封装"><a href="#封装" class="headerlink" title="封装"></a>封装</h2><p>封装把一个对象的属性私有化，同时提供一些可以被外界访问的属性的方法，如果不想被外界方法，我们大可不必提供方法给外界访问。但是如果一个类没有提供给外界访问的方法，那么这个类也没有什么意义了。</p>
+<h2 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h2><ul>
+<li>继承所描述的是“is-a”的关系，如果有两个对象A和B，若可以描述为“A是B”，则可以表示A继承B，其中B是被继承者称之为父类或者基类，A是继承者称之为子类或者派生类。基类的私有成员物理上已经被继承过来，只不过逻辑上程序员不能去访问它。继承反映现实世界的一般到特殊关系。<br>&emsp;</li>
+<li>java只支持单继承，但可以多级继承。在java中,所有的java类都直接或间的接的继承了java.lang.long.Object类.Object类是所有java类的祖先.在定义一个类时,没有使用 extends 关键字,那么这个类直接继承Object类。<br>&emsp;</li>
+<li>在继承关系中，如果数据成员重名，则创建子类对象进行访问时遵循就近原则，没有则向上找。</li>
+</ul>
 <h4 id="java中可继承："><a href="#java中可继承：" class="headerlink" title="java中可继承："></a>java中可继承：</h4><ul>
 <li><p>public 和 protected 修饰的属性和方法,不管子类和父类是否在同一个包里.</p>
 </li>
 <li><p>默认权限修饰符修饰的属性和方法,但子类和父类必须在同一个包里.</p>
 <h4 id="不可继承："><a href="#不可继承：" class="headerlink" title="不可继承："></a>不可继承：</h4></li>
-<li><p>private 修饰的内容</p>
+<li><p>private 修饰的成员</p>
 </li>
 <li><p>构造方法（父类的）</p>
 </li>
@@ -203,14 +207,26 @@
 <li>如果子类的构造方法中没有通过super显示调用父类的有参构造方法,也没有通过this显示调用自身的其他构造方法,则系统会默认先调用父类的无参构造 方法.在这种情况下写不写super()语句效果都是一样.<br>&emsp;</li>
 <li>如果子类的构造方法中通过super显示调用父类的有参构造方法,那将执行父类相应构造方法,而不执行父类无参构造方法.<br>&emsp;</li>
 <li>如果子类的构造方法中通过this显示调用自身的其他构造方法,在相应 构造方法中应用以上两条规则.<br>&emsp;</li>
-<li>特别注意的是,如果存在多级继承关系,在创建一个子类对象时,以上规则会多次向更高一级父类应用,一直到执行顶级父类Object类的无参构造方法为止.<br>&emsp;<h2 id="多态"><a href="#多态" class="headerlink" title="多态"></a>多态</h2></li>
+<li>特别注意的是,如果存在多级继承关系,在创建一个子类对象时,以上规则会多次向更高一级父类应用,一直到执行顶级父类Object类的无参构造方法为止.<br>&emsp;</li>
 </ol>
-<h4 id="个人理解"><a href="#个人理解" class="headerlink" title="个人理解"></a>个人理解</h4><p>父类引用既可以指向父类对象，也可以指向子类对象。即父类引用既可以调用父类本身的方法，也可以调用子类继承父类或重写后的方法，从而使一个函数表现出不同的形态。</p>
+<h2 id="多态"><a href="#多态" class="headerlink" title="多态"></a>多态</h2><h4 id="个人理解"><a href="#个人理解" class="headerlink" title="个人理解"></a>个人理解</h4><p>父类引用既可以指向父类对象，也可以指向子类对象。即父类引用既可以调用父类本身的方法，也可以调用子类继承父类重写后的方法，从而使调用同一方法表现出不同的形态。</p>
+<h4 id="多态执行"><a href="#多态执行" class="headerlink" title="多态执行"></a>多态执行</h4><ul>
+<li><font color=#0099ff  face="">成员变量，静态方法看左边；非静态方法：编译看左边，运行看右边。</font>意思是：当父类变量引用子类对象时　Fu f = new Zi( )，在这个引用变量f指向的对象中，他的成员变量和静态方法与父类是一致的，他的非静态方法，在编译时是与父类一致的，运行时却与子类一致（发生了复写）。</li>
+</ul>
+<h5 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h5><ol>
+<li>Fu f = new Zi( )；首先了解变量F到底是什么，把这句子分2段：Fu f;这是声明一个变量f为Fu这个类，那么知道了f肯定是Fu类。然后我们f=newZi();中建立一个子类对象赋值给了f，结果是什么？？?————结果是，拥有了被Zi类函数覆盖后的Fu类对象 f。也就是说：<br>只有子类的函数覆盖了父类的函数这一个变化，但是f肯定是Fu这个类，也就是说f不可能变成其他比如Zi这个类等等(突然f拥有了Zi类特有函数，成员变量等都是不可能的）。所以f所代表的是函数被复写后（多态的意义）的一个Fu类，而Fu类原来有的成员变量（不是成员函数不可能被复写）没有任何变化.<font color=#0099ff  face="">获得结论1：成员变量：编译和运行都看Fu。</font><br>&emsp;</li>
+<li>但 f 的 Fu 类函数被复写了。<font color=#0099ff  face="">获得结论2：非静态方法：编译看Fu，运行看Zi</font><br>&emsp;</li>
+<li>当静态时，Fu类的所有函数跟随Fu类加载而加载了。也就是Fu类的函数(是先于对象建立之前就存在了，无法被后出现的Zi类对象所复写的，所以没发生复写，<font color=#0099ff  face="">获得结论3：静态方法：编译和运行都看Fu。</font></li>
+</ol>
 <h4 id="重写"><a href="#重写" class="headerlink" title="重写"></a>重写</h4><ul>
-<li><p>同名同参同返回类型，重写后子类有两个方法，一个是父类的，另一个是子类重写的。两个方法只是函数体不同.</p>
-</li>
-<li><p>重写后的子类方法的控制访问权限必须 &gt;= 父类的控制访问权限（权限过低无法实现多态）.</p>
-</li>
+<li>同名同参，重写后子类有两个方法，一个是父类的，一个是子类重写的，两个方法只是函数体不同。重写是动态多态（运行）。</li>
+<li>子类方法的返回值范围必须 【 &lt;= 】 父类方法的返回值范围。</li>
+<li>重写后的子类方法的访问权限必须 【 &gt;= 】 父类的访问权限（权限过低无法实现多态）</li>
+<li>@Override 写在方法前面，用来检测是不是有效的正确覆盖重写</li>
+</ul>
+<h4 id="重载"><a href="#重载" class="headerlink" title="重载"></a>重载</h4><ul>
+<li>重载是静态多态（编译）</li>
+<li>同名不同参，返回值类型不能作为是否构成方法重载的依据</li>
 </ul>
 <h4 id="多态的三个条件"><a href="#多态的三个条件" class="headerlink" title="多态的三个条件"></a>多态的三个条件</h4><ol>
 <li>继承的存在(继承是多态的基础,没有继承就没有多态).<br>&emsp;</li>
@@ -218,9 +234,9 @@
 <li>父类引用变量指向子类对象(子类到父类的类型转换).</li>
 </ol>
 <h4 id="子类转换成父类时的规则"><a href="#子类转换成父类时的规则" class="headerlink" title="子类转换成父类时的规则:"></a>子类转换成父类时的规则:</h4><ul>
-<li>将一个父类的引用指向一个子类的对象,称为向上转型(upcastiog),自动进行类型转换.<br>&emsp;</li>
+<li>将一个父类的引用指向一个子类的对象,称为向上转型(upcastiog),自动进行类型转换，小范围转向大范围。<br>&emsp;</li>
 <li>此时通过父类引用调用的方法是子类覆盖或继承父类的方法,不是父类的方法.<br>&emsp;</li>
-<li>此时通过父类引用变量无法调用子类特有的方法，如果父类要调用子类的特有方法就得将一个指向子类对象的父类引用赋给一个子类的引用,称为向下转型,此时必须进行强制类型转换.<br>————————————————</li>
+<li>此时通过父类引用变量无法调用子类特有的方法，如果父类要调用子类的特有方法就得将一个指向子类对象的父类引用赋给一个子类的引用,称为向下转型【 还原 】,此时必须进行强制类型转换.<br>————————————————</li>
 </ul>
 <p>部分参照：<a href="https://blog.csdn.net/qq_38869854/java/article/details/79205010" target="_blank" rel="noopener">https://blog.csdn.net/qq_38869854/java/article/details/79205010</a></p>
 
@@ -281,7 +297,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/06/10/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/06/10/object-oriented/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -294,6 +310,15 @@
 
   
 <nav id="article-nav">
+  
+    <a href="/2020/06/19/keyword/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          keyword
+        
+      </div>
+    </a>
   
   
     <a href="/2020/06/09/function-call/" id="article-nav-older" class="article-nav-link-wrap">
@@ -340,7 +365,7 @@
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2020 Aaron
+    		&copy; 2022 Aaron
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
@@ -417,6 +442,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             <input type="checkbox" q-on="click:toggleTag(e)" q-attr="checked:showTags">
           </label>
           <ul class="article-tag-list" q-show="showTags">
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">interface</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">keyword</a>
+              </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">java</a>
